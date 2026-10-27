@@ -1,0 +1,743 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Barbearia Kennedy | Cortes e Produtos</title>
+  <meta name="description" content="Conheça a Barbearia Kennedy, confira nossos cortes, produtos e horários de atendimento em Sapiranga - RS.">
+  <meta name="keywords" content="Barbearia Kennedy, cortes masculinos, barba, produtos para barba, Sapiranga">
+
+  <link href="assets/img/portfolio/favicon.png" rel="icon">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS do Bootstrap e do template -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <style>
+    :root {
+      --cor-principal: #e50914;
+      --cor-verde: #e50914;
+      --cor-escura: #171717;
+      --cor-cinza: #f5f5f5;
+    }
+
+    body {
+      fon
+      -family: "Roboto", sans-serif;
+    }
+
+    h1, h2, h3, h4, .sitename {
+      font-family: "Raleway", sans-serif;
+    }
+
+    .logo .sitename {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .social-links a:hover {
+      background: var(--cor-principal);
+    }
+
+    .hero {
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.48);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h2 {
+      font-size: clamp(35px, 5vw, 60px);
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      font-size: 24px;
+    }
+
+    .destaque {
+      color: var(--cor-principal);
+    }
+
+    .section-title h2::after {
+      background: var(--cor-principal);
+    }
+
+    .card-barbearia {
+      height: 100%;
+      padding: 30px 22px;
+      background: #fff;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 22px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .card-barbearia:hover {
+      transform: translateY(-6px);
+      border-bottom-color: var(--cor-principal);
+    }
+
+    .card-barbearia .icone {
+      font-size: 38px;
+      color: var(--cor-principal);
+      margin-bottom: 15px;
+    }
+
+    .card-barbearia h3 {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .preco {
+      display: inline-block;
+      color: var(--cor-principal);
+      font-size: 24px;
+      font-weight: 900;
+      margin-top: 8px;
+    }
+
+    .produtos {
+      background: var(--cor-cinza);
+    }
+
+    .produto-card {
+      height: 100%;
+      padding: 28px 18px;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+      transition: 0.3s;
+    }
+
+    .produto-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .produto-card .icone-produto {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #fff0f0;
+      color: var(--cor-principal);
+      font-size: 32px;
+    }
+
+    .produto-card h3 {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .horario-card {
+      height: 100%;
+      padding: 30px;
+      background: var(--cor-escura);
+      color: #fff;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .horario-card .icone {
+      color: var(--cor-verde);
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .horario-card h3 {
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .horario-card p {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .horario-card .fechado {
+      color: #ff626b;
+      font-weight: 700;
+    }
+
+    .botao-agendar {
+      display: inline-block;
+      background: var(--cor-principal);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .botao-agendar:hover {
+      background: #b90710;
+      color: #fff;
+    }
+
+    .contact .info-item h3 {
+      font-weight: 800;
+    }
+
+    #footer .sitename {
+      color: var(--cor-principal);
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 36px;
+      }
+
+      .horario-card {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- Cabeçalho e menu -->
+  <header id="header" class="header dark-background d-flex flex-column">
+
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg"
+           alt="Barbearia Kennedy"
+           class="img-fluid rounded-circle">
+    </div>
+
+    <a href="#hero" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Barbearia Kennedy</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.instagram.com/evertonoliveira_barbeiro/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Instagram" class="instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li>
+          <a href="#hero" class="active">
+            <i class="bi bi-house navicon"></i> Início
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            <i class="bi bi-shop navicon"></i> Sobre nós
+          </a>
+        </li>
+        <li>
+          <a href="#cortes">
+            <i class="bi bi-scissors navicon"></i> Cortes e serviços
+          </a>
+        </li>
+        <li>
+          <a href="#produtos">
+            <i class="bi bi-bag navicon"></i> Produtos
+          </a>
+        </li>
+        <li>
+          <a href="#horarios">
+            <i class="bi bi-clock navicon"></i> Horários
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <i class="bi bi-envelope navicon"></i> Contato
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Início -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.jpg"
+           alt="Interior da Barbearia Kennedy"
+           data-aos="fade-in">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>
+          SEU ESTILO.<br>
+          NOSSA<br>
+          ASSINATURA.
+        </h2>
+
+        
+
+        <a href="#cortes" class="botao-agendar">
+          Confira nossos serviços
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Sobre nós -->
+    <section id="about" class="about section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Sobre nós</h2>
+        <p>
+          Mais do que um corte, uma experiência feita para valorizar
+          seu estilo e sua personalidade.
+        </p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 align-items-center">
+
+          <div class="col-lg-5">
+            <img src="assets/img/my-profile-img.jpg"
+                 class="img-fluid rounded"
+                 alt="Ambiente da Barbearia Kennedy">
+          </div>
+
+          <div class="col-lg-7 content">
+            <h2>Tradição, estilo e cuidado em cada detalhe.</h2>
+
+            <p class="fst-italic py-3">
+              Na Barbearia Kennedy, nosso objetivo é oferecer um
+              atendimento atencioso e serviços que combinam com você.
+            </p>
+
+            <p>
+              Trabalhamos com cortes masculinos, cuidados com a barba
+              e acabamento, sempre buscando valorizar o visual de cada
+              cliente. Também contamos com produtos para ajudar você
+              a manter os cuidados com o cabelo e a barba no dia a dia.
+            </p>
+
+            <p>
+              Venha conhecer nosso espaço e encontrar o estilo que
+              combina com você!
+            </p>
+
+            <a href="#contact" class="botao-agendar">
+              Entre em contato
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Cortes e serviços -->
+    <section id="cortes" class="services section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Cortes e serviços</h2>
+        <p>
+          Confira nossa tabela de preços e escolha o serviço ideal para você.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="card-barbearia">
+              <div class="icone">
+                <i class="bi bi-scissors"></i>
+              </div>
+              <h3>Corte social ou degradê</h3>
+              <p>Um corte clássico ou moderno, do jeito que você gosta.</p>
+              <span class="preco">R$ 35,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-barbearia">
+              <div class="icone">
+                <i class="bi bi-person"></i>
+              </div>
+              <h3>Corte navalhado</h3>
+              <p>Acabamento preciso para um visual marcante.</p>
+              <span class="preco">R$ 40,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-barbearia">
+              <div class="icone">
+                <i class="bi bi-person-badge"></i>
+              </div>
+              <h3>Cabelo e barba</h3>
+              <p>Cuide do visual completo em um só atendimento.</p>
+              <span class="preco">R$ 55,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="card-barbearia">
+              <div class="icone">
+                <i class="bi bi-person-lines-fill"></i>
+              </div>
+              <h3>Barba</h3>
+              <p>Cuidados e acabamento para valorizar seu estilo.</p>
+              <span class="preco">R$ 25,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-barbearia">
+              <div class="icone">
+                <i class="bi bi-eye"></i>
+              </div>
+              <h3>Sobrancelha</h3>
+              <p>Acabamento para complementar seu visual.</p>
+              <span class="preco">R$ 15,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-barbearia">
+              <div class="icone">
+                <i class="bi bi-person-check"></i>
+              </div>
+              <h3>Pezinho</h3>
+              <p>Acabamento para deixar seu corte alinhado.</p>
+              <span class="preco">R$ 10,00</span>
+            </div>
+          </div>
+
+          <div class="col-12 text-center mt-4">
+            <p>Escolha seu serviço e entre em contato para agendar.</p>
+            <a href="#contact" class="botao-agendar">
+              <i class="bi bi-calendar-check"></i> Quero agendar
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="produtos section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nossos produtos</h2>
+        <p>
+          Produtos para complementar sua rotina de cuidados com o cabelo
+          e a barba. Confira as opções disponíveis na Barbearia Kennedy.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="produto-card">
+              <div class="icone-produto">
+                <i class="bi bi-droplet"></i>
+              </div>
+              <h3>Balm</h3>
+              <p>Produto para complementar os cuidados com a barba.</p>
+              <span class="preco">R$ 45,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="produto-card">
+              <div class="icone-produto">
+                <i class="bi bi-box"></i>
+              </div>
+              <h3>Pomada</h3>
+              <p>Para ajudar na finalização e na modelagem do cabelo.</p>
+              <span class="preco">R$ 35,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="produto-card">
+              <div class="icone-produto">
+                <i class="bi bi-stars"></i>
+              </div>
+              <h3>Desodorante para barba</h3>
+              <p>Uma opção para incluir na rotina de cuidados com a barba.</p>
+              <span class="preco">R$ 35,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="produto-card">
+              <div class="icone-produto">
+                <i class="bi bi-moisture"></i>
+              </div>
+              <h3>Shampoo para barba</h3>
+              <p>Para a limpeza da barba durante os cuidados diários.</p>
+              <span class="preco">R$ 45,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="produto-card">
+              <div class="icone-produto">
+                <i class="bi bi-wind"></i>
+              </div>
+              <h3>Cera em pó</h3>
+              <p>Uma alternativa para auxiliar na finalização do cabelo.</p>
+              <span class="preco">R$ 35,00</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="produto-card">
+              <div class="icone-produto">
+                <i class="bi bi-droplet-half"></i>
+              </div>
+              <h3>Pré-esfoliante</h3>
+              <p>Produto para complementar a rotina de cuidados com a pele.</p>
+              <span class="preco">R$ 45,00</span>
+            </div>
+          </div>
+
+          <div class="col-12 text-center mt-4">
+            <p>Gostou de algum produto? Fale com a gente para consultar a disponibilidade.</p>
+            <a href="#contact" class="botao-agendar">
+              <i class="bi bi-chat-dots"></i> Consultar produtos
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Horários -->
+    <section id="horarios" class="section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Horários de atendimento</h2>
+        <p>Confira nossos horários e programe sua visita.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="horario-card">
+              <div class="icone">
+                <i class="bi bi-calendar-x"></i>
+              </div>
+              <h3>Segunda-feira</h3>
+              <p class="fechado">Fechado</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="horario-card">
+              <div class="icone">
+                <i class="bi bi-calendar-week"></i>
+              </div>
+              <h3>Terça a sexta</h3>
+              <p><i class="bi bi-sun"></i> 09h às 11h30</p>
+              <p><i class="bi bi-sun"></i> 14h às 19h30</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="horario-card">
+              <div class="icone">
+                <i class="bi bi-calendar-check"></i>
+              </div>
+              <h3>Sábado</h3>
+              <p><i class="bi bi-sun"></i> 08h às 11h30</p>
+              <p><i class="bi bi-sun"></i> 13h às 16h</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="contact section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Entre em contato</h2>
+        <p>
+          Ficou com alguma dúvida ou quer agendar seu horário?
+          Entre em contato com a Barbearia Kennedy.
+        </p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Endereço</h3>
+                  <p>Rua Presidente Kennedy, 1123, Bairro São Luís, Sapiranga - RS</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Telefone</h3>
+                  <p>+55 (51) 99502-1375</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex">
+                <i class="bi bi-instagram flex-shrink-0"></i>
+                <div>
+                  <h3>Instagram</h3>
+                  <p>
+                    <a href="https://www.instagram.com/evertonoliveira_barbeiro/"
+                       target="_blank" rel="noopener noreferrer">
+                      @evertonoliveira_barbeiro
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex">
+                <i class="bi bi-clock flex-shrink-0"></i>
+                <div>
+                  <h3>Atendimento</h3>
+                  <p>Terça a sábado</p>
+                </div>
+              </div>
+
+              <a class="botao-agendar"
+                 href="https://www.instagram.com/evertonoliveira_barbeiro/"
+                 target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-calendar-check"></i> Agendar pelo Instagram
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-7">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2061.7772438239635!2d-51.0008032396811!3d-29.64777917515485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95193f77c976f899%3A0x1009803ca72222be!2sKENNEDY%20BARBEARIA!5e0!3m2!1spt-BR!2sbr!4v1791325293276!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="400"
+              style="border:0; border-radius: 10px;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="Localização da Barbearia Kennedy">
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+
+      <div class="copyright text-center">
+        <p>
+          © <span>2026</span>
+          <strong class="px-1 sitename">Barbearia Kennedy</strong>
+          <span>Todos os direitos reservados.</span>
+        </p>
+      </div>
+
+      <div class="credits text-center">
+        Desenvolvido com Bootstrap.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <a href="#hero" id="scroll-top"
+     class="scroll-top d-flex align-items-center justify-content-center"
+     aria-label="Voltar ao topo">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <div id="preloader"></div>
+
+  <!-- JavaScript -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    window.addEventListener("load", function () {
+      if (typeof AOS !== "undefined") {
+        AOS.init({
+          duration: 600,
+          once: true
+        });
+      }
+
+      if (typeof Typed !== "undefined") {
+        const elemento = document.querySelector(".typed");
+
+        if (elemento) {
+          new Typed(".typed", {
+            strings: [
+              "Barbearia Kennedy",
+              "Seu estilo, nossa assinatura",
+              "Cuidado em cada detalhe"
+            ],
+            typeSpeed: 55,
+            backSpeed: 30,
+            backDelay: 1800,
+            loop: true
+          });
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+```
